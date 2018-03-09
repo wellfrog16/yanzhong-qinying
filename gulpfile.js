@@ -15,7 +15,7 @@ const glob = {
     lib: './src/js/@(lib|nls)/**/*', // lib + nls
     script: ['./src/js/!(lib|nls)/**/*', './src/js/*'], // 与上一个匹配为整个js目录
     media: './src/assets/@(video|audio)/**/*', // 视音频
-    image: './src/assets/img/**/*.@(jpg|jpeg|png|git)', // 图片
+    image: './src/assets/img/**/*.*', // 图片
     style: './src/style/**/*', // 样式
     html: './src/**/*.html', //html
 };
@@ -80,7 +80,8 @@ gulp.task('move-style', ['stylelint'], () => {
     gulp.src('./src/style/main.less')
         .pipe($.cssUnit({
             type: 'px-to-rem',
-            rootSize: 50,
+            width: 750,
+            rootSize: 75,
             ignore: 1       // 非转换需要设置为，如10px 写成10*1px;
         }))
         .pipe($.less())

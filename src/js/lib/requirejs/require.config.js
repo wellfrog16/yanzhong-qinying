@@ -69,15 +69,19 @@
 
         // jquery
         // ------------------------------------
-        // 'jquery': 'lib/jquery/jquery-3.3.1.min',
-        'jquery': 'lib/jquery/jquery-3.3.1.slim.min',
+        'jquery': 'lib/jquery/jquery-3.3.1.min',
+        // 'jquery': 'lib/jquery/jquery-3.3.1.slim.min',
         // 'jquery': 'lib/jquery/jquery-1.12.4.min',
         // 'jquery.cookie': 'lib/jquery/jquery.cookie',
         'jquery.browser': 'lib/jquery/jquery.browser',
-        // 'jquery.hammer': 'lib/jquery/jquery.hammer',
+        'jquery.transit': 'lib/jquery/jquery.transit.min',
+        'jquery.hammer': 'lib/jquery/jquery.hammer',
+        'hammer': 'lib/jquery/hammer.min',
         // 'jquery.fullPage': 'lib/jquery/jquery.fullPage',
-        // 'hammer': 'lib/jquery/hammer.min',
+        
         // 'jquery.scrollTo': 'lib/jquery/jquery.scrollTo',
+
+        'scrollreveal' : 'lib/scrollReveal/scrollreveal-3.3.6.min'
 
         // 'swiper': 'lib/swiper/swiper-3.4.2.jquery.min',
 

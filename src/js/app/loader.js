@@ -65,7 +65,7 @@ define([
             loader.maintainScriptOrder = true;
 
             var source = [
-                { 'src': 'main/loading.jpg' }
+                { 'src': 'h5/bg.jpg' }
             ];
 
             loader.on('progress', onProgress);
@@ -73,11 +73,11 @@ define([
             loader.loadManifest(source, true, 'assets/img/');
 
             function onComplete() {
-                // t.stop();
-                // $('.loading').fadeOut();
-                // utils.tryFun(callback);
+                t.stop();
+                $('.loading').fadeOut();
+                utils.tryFun(callback);
 
-                // console.log('资源加载完成');
+                console.log('资源加载完成');
             }
 
             function onProgress() {
