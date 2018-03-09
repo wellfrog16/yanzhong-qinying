@@ -248,10 +248,11 @@ body {
 .contaniner, .snowflake {
     z-index: 1111;
     position: absolute;
-    width: 100%;
+    width: 100vw;
     height: 2133px;
     top: 0;
     left: 0;
+    overflow: hidden;
 }
 
 .mask {
@@ -275,9 +276,12 @@ body {
     top: 200px;
     left: 92px;
     position: absolute;
-    background-image: url('../assets/img/h5/qr.png');
-    background-size: contain;
-    background-repeat: no-repeat;
+    // background-image: url('../assets/img/h5/qr.png');
+    // background-size: contain;
+    // background-repeat: no-repeat;
+    img {
+        width: 100%;
+    }
 }
 
 .copy {
@@ -289,6 +293,7 @@ body {
     background-image: url('../assets/img/h5/copy.png');
     background-size: contain;
     background-repeat: no-repeat;
+    display: none;
 }
 
 .copy-finish {
@@ -300,4 +305,5 @@ body {
     background-image: url('../assets/img/h5/copy-finish.png');
     background-size: contain;
     background-repeat: no-repeat;
+    display: none;
 }
