@@ -7,6 +7,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>延中 - 樱时光，好心情</title>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 
     <!-- 仅ie9和其他现代浏览器开启路由 -->
     <!--[if (gte IE 9)|(!IE)]><!--> 
@@ -28,5 +29,14 @@
     <!-- end -->
 </head>
 <body>
+    <audio src="./assets/audio/12.mp3" id="h5-bg" preload="auto" autoplay></audio>
+    <script>
+        // 自动播放，兼容，目前只有这个办法。还要设置上面的audio标签
+        // 如果不需要自动播放，注释即可
+        // 另外还需要修改script中music的调用
+        document.addEventListener("WeixinJSBridgeReady", function (){
+            document.getElementById('h5-bg').play();        
+        }, false);
+    </script>
 </body>
 </html>

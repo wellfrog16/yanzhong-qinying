@@ -23,11 +23,11 @@
     //     }
     // },
 
-    // map: {
-    //     '*': {
-    //         'css': 'requirejs/css.min'
-    //     }
-    // },
+    map: {
+        '*': {
+            'css': 'requirejs/css.min'
+        }
+    },
 
     // text: {
     //    onXhr: function (xhr, url) {
@@ -52,7 +52,7 @@
     // },
 
     paths: {
-        '@': 'app',
+        // '@': 'app', // 废弃，这个加载方式会导致text!加载路径错误
 
         // requirejs
         // ------------------------------------
@@ -81,7 +81,13 @@
         
         // 'jquery.scrollTo': 'lib/jquery/jquery.scrollTo',
 
-        'scrollreveal' : 'lib/scrollReveal/scrollreveal-3.3.6.min'
+        'scrollreveal' : 'lib/scrollReveal/scrollreveal-3.3.6.min',
+        'clipboard' : 'lib/clipboard/clipboard.min',
+
+        'script': 'app/script',
+        'loader': 'app/loader',
+        'share': 'app/share',
+        'music': 'app/music'
 
         // 'swiper': 'lib/swiper/swiper-3.4.2.jquery.min',
 

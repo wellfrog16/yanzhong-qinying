@@ -5,7 +5,7 @@ define([
     'createjs',
     'utils/utils',
     'utils/frameplayer',
-    'text!../../views/loading.html!strip',
+    'text!../views/loading.html!strip',
     'jquery.browser'],
 ($, createjs, utils, frameplayer, htmlLoading) => {
     return (callback) => {
@@ -24,35 +24,16 @@ define([
 
         var source = [
             { 'src': 'main/landscape.png' },
-            { 'src': 'main/loading.jpg' }
+            { 'src': 'loading/bg.png' },
+            { 'src': 'loading/middle.png' },
+            { 'src': 'loading/text.png' }
         ];
 
         loader.on('complete', onComplete);
         loader.loadManifest(source, true, 'assets/img/');
 
-        var t = null;
-
         function onComplete() {
             $('body').append(htmlLoading);
-
-            t = frameplayer({
-                target: $('.movie'),
-                total: 66,
-                row: 10,
-                loop: true,
-                loopDelay: 0,
-                // loopTimes:3,
-                fps: 6,
-                scale: 1.5,
-                autosize: false,
-                onProgress(frame) {
-                    // console.log(frame);
-                }
-            });
-
-            // t.breakpoint(20);
-            t.play();
-
             mainload();
         }
 
@@ -65,7 +46,21 @@ define([
             loader.maintainScriptOrder = true;
 
             var source = [
-                { 'src': 'h5/bg.jpg' }
+                { 'src': 'h5/bg.jpg' },
+                { 'src': 'h5/btn-buy.png' },
+                { 'src': 'h5/btn-follow.png' },
+                { 'src': 'h5/copy-finish.png' },
+                { 'src': 'h5/copy.png' },
+                { 'src': 'h5/flower.png' },
+                { 'src': 'h5/KV-product.png' },
+                { 'src': 'h5/KV-slogan.png' },
+                { 'src': 'h5/photo.png' },
+                { 'src': 'h5/product-group.png' },
+                { 'src': 'h5/product.png' },
+                { 'src': 'h5/qr.png' },
+                { 'src': 'h5/text-1.png' },
+                { 'src': 'h5/text-2.png' },
+                { 'src': 'h5/text-3.png' }
             ];
 
             loader.on('progress', onProgress);
@@ -73,17 +68,16 @@ define([
             loader.loadManifest(source, true, 'assets/img/');
 
             function onComplete() {
-                t.stop();
                 $('.loading').fadeOut();
                 utils.tryFun(callback);
 
-                console.log('资源加载完成');
+                // console.log('资源加载完成');
             }
 
             function onProgress() {
                 // console.log(loader.progress);
                 $('.loading span').text((loader.progress * 100 | 0) + ' %');
-                $('.loading .progress div').css('width', (loader.progress * 100 | 0) + '%');
+                $('.loading .progress').css('width', (loader.progress * 100 | 0) + '%');
             }
         }
     };

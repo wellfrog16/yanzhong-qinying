@@ -1,4 +1,5 @@
-﻿require(['@/script'], (script) => {
+﻿require(['script'], (script) => {
+    window.scrollTo(0, 0);
     script();
 
     // 路由

@@ -3,14 +3,18 @@
 define([
     'jquery',
     'utils/utils',
-    '@/loader',
+    'loader',
     'scrollreveal',
-    'text!../../views/block.html!strip',
-    'text!../../views/index.html!strip',
+    'clipboard',
+    'share',
+    'utils/frameplayer',
+    'music',
+    'text!../views/block.html!strip',
+    'text!../views/index.html!strip',
     'jquery.transit',
     'jquery.hammer'
 ],
-($, utils, loader, scrollreveal, htmlBlock, htmlIndex) => {
+($, utils, loader, scrollreveal, Clipboard, share, frameplayer, music, htmlBlock, htmlIndex) => {
     return () => {
         // 加载jquery插件
         utils.jqueryPlugins();
@@ -19,25 +23,54 @@ define([
         if (!utils.isPC) { $('body').append(htmlBlock); }
 
         loader(() => {
-            $('body').append(htmlIndex);
+            $('body').append(htmlIndex).addClass('bg');
+
+            music(true);
+
+            // share
+            share({
+                title: '延中',
+                desc: '描述',
+                imgUrl: 'http://test.tron-m.com/yanzhong/qinying/h5/assets/img/main/share.jpg'
+            });
+
+            const clipboard = new Clipboard('.copy');
+
+            // 永远为false，处理eslint校验
+            if (!clipboard) { clipboard.destroy(); }
+
+            frameplayer({
+                target: $('.kv-animation'),
+                total: 23,
+                row: 8,
+                loop: true,
+                loopDelay: 0,
+                // loopTimes:3,
+                fps: 6,
+                scale: 2,
+                autosize: false,
+                onProgress(frame) {
+                    // console.log(frame);
+                }
+            }).play();
 
             // 临时逐帧动画
-            let i = 0;
-            setInterval(() => {
-                let name = i * 4;
-                let x = '';
+            // let i = 0;
+            // setInterval(() => {
+            //     let name = i * 4;
+            //     let x = '';
 
-                for (let j = 0; j < 5 - (name + '').length; j++) {
-                    x += '0';
-                }
+            //     for (let j = 0; j < 5 - (name + '').length; j++) {
+            //         x += '0';
+            //     }
 
-                name = x + name;
-                i++;
+            //     name = x + name;
+            //     i++;
 
-                if (i > 22) { i = 0; }
+            //     if (i > 22) { i = 0; }
 
-                $('.kv-animation').css('background-image', 'url("./assets/img/frame/kv_' + name + '.png")');
-            }, 1000 / 6);
+            //     $('.kv-animation').css('background-image', 'url("./assets/img/frame/kv_' + name + '.png")');
+            // }, 1000 / 6);
 
             // l
             const sr = scrollreveal({
@@ -63,12 +96,13 @@ define([
             });
 
             // 点击购买
-            $('.button-buy').hammer().on('tap', () => {
+            $('.button-buy').on('click', () => {
                 $('.mask, .tools, .copy').show();
             });
 
             // 复制成功
             $('.copy').hammer().on('tap', () => {
+                $('.copy').trigger('click');
                 $('.copy').hide();
                 $('.copy-finish').show();
             });
