@@ -29,8 +29,8 @@ define([
 
             // share
             share({
-                title: '延中',
-                desc: '描述',
+                title: '樱时光•好心情',
+                desc: '分享沁樱 分享好心情',
                 imgUrl: 'http://test.tron-m.com/yanzhong/qinying/h5/assets/img/main/share.jpg'
             });
 
