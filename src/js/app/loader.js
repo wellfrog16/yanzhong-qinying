@@ -24,6 +24,7 @@ define([
 
         var source = [
             { 'src': 'main/landscape.png' },
+            { 'src': 'loading/bg.jpg' },
             { 'src': 'loading/bg.png' },
             { 'src': 'loading/middle.png' },
             { 'src': 'loading/text.png' }
@@ -52,15 +53,27 @@ define([
                 { 'src': 'h5/copy-finish.png' },
                 { 'src': 'h5/copy.png' },
                 { 'src': 'h5/flower.png' },
+                { 'src': 'h5/gou.png' },
                 { 'src': 'h5/KV-product.png' },
                 { 'src': 'h5/KV-slogan.png' },
                 { 'src': 'h5/photo.png' },
                 { 'src': 'h5/product-group.png' },
                 { 'src': 'h5/product.png' },
+                { 'src': 'h5/qiang.png' },
                 { 'src': 'h5/qr.png' },
                 { 'src': 'h5/text-1.png' },
                 { 'src': 'h5/text-2.png' },
-                { 'src': 'h5/text-3.png' }
+                { 'src': 'h5/text-3.png' },
+                { 'src': 'h5/xian.png' },
+
+                { 'src': 'icon/icon_petal_1.png' },
+                { 'src': 'icon/icon_petal_2.png' },
+                { 'src': 'icon/icon_petal_3.png' },
+                { 'src': 'icon/icon_petal_4.png' },
+                { 'src': 'icon/icon_petal_5.png' },
+                { 'src': 'icon/icon_petal_6.png' },
+                { 'src': 'icon/icon_petal_7.png' },
+                { 'src': 'icon/icon_petal_8.png' }
             ];
 
             loader.on('progress', onProgress);

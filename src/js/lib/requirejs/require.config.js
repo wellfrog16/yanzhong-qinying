@@ -87,7 +87,8 @@
         'script': 'app/script',
         'loader': 'app/loader',
         'share': 'app/share',
-        'music': 'app/music'
+        'music': 'app/music',
+        'video': 'app/video'
 
         // 'swiper': 'lib/swiper/swiper-3.4.2.jquery.min',
 

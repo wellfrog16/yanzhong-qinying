@@ -9,12 +9,13 @@ define([
     'share',
     'utils/frameplayer',
     'music',
+    'video',
     'text!../views/block.html!strip',
     'text!../views/index.html!strip',
     'jquery.transit',
     'jquery.hammer'
 ],
-($, utils, loader, scrollreveal, Clipboard, share, frameplayer, music, htmlBlock, htmlIndex) => {
+($, utils, loader, scrollreveal, Clipboard, share, frameplayer, music, video, htmlBlock, htmlIndex) => {
     return () => {
         // 加载jquery插件
         utils.jqueryPlugins();
@@ -26,6 +27,9 @@ define([
             $('body').append(htmlIndex).addClass('bg');
 
             music(true);
+            // video($('.button-play'), () => {
+            //     console.log('OKOKOK');
+            // });
 
             // share
             share({
@@ -53,24 +57,6 @@ define([
                     // console.log(frame);
                 }
             }).play();
-
-            // 临时逐帧动画
-            // let i = 0;
-            // setInterval(() => {
-            //     let name = i * 4;
-            //     let x = '';
-
-            //     for (let j = 0; j < 5 - (name + '').length; j++) {
-            //         x += '0';
-            //     }
-
-            //     name = x + name;
-            //     i++;
-
-            //     if (i > 22) { i = 0; }
-
-            //     $('.kv-animation').css('background-image', 'url("./assets/img/frame/kv_' + name + '.png")');
-            // }, 1000 / 6);
 
             // l
             const sr = scrollreveal({
