@@ -57,6 +57,7 @@ define([
                 { 'src': 'h5/KV-product.png' },
                 { 'src': 'h5/KV-slogan.png' },
                 { 'src': 'h5/photo.png' },
+                { 'src': 'h5/photo.jpg' },
                 { 'src': 'h5/product-group.png' },
                 { 'src': 'h5/product.png' },
                 { 'src': 'h5/qiang.png' },
