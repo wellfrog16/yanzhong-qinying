@@ -27,9 +27,9 @@ define([
             $('body').append(htmlIndex).addClass('bg');
 
             music(true);
-            // video($('.button-play'), () => {
-            //     console.log('OKOKOK');
-            // });
+            video($('.button-play'), () => {
+                // console.log('OKOKOK');
+            });
 
             // share
             share({
